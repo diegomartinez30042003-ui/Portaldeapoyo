@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Heart } from 'lucide-react';
+import Logo from './Logo';
 import './Navbar.css';
 
 // Desplazamiento suave a una sección por id (evita chocar con el hash del router).
@@ -13,11 +13,8 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="container navbar-content">
         <Link to="/" className="navbar-brand" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          <span className="brand-mark"><Heart size={20} /></span>
-          <span className="brand-text">
-            <span className="brand-name">Portal de Apoyo</span>
-            <span className="brand-tagline">Psicoeducativo · Venezuela 2026</span>
-          </span>
+          <Logo />
+          <span className="brand-tagline">Impacto de las emergencias y desastres en la salud mental</span>
         </Link>
 
         <div className="navbar-actions">

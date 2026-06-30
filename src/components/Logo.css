@@ -1,0 +1,29 @@
+.porti-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.porti-mark {
+  width: 2.9rem;
+  height: 2.4rem;
+  flex-shrink: 0;
+  display: block;
+}
+
+.porti-wordmark {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.85rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--color-primary-dark);
+}
+
+.porti-i {
+  color: var(--color-secondary-dark);
+}
+
+/* Variante compacta */
+.porti-logo.sm .porti-mark { width: 2.3rem; height: 1.95rem; }
+.porti-logo.sm .porti-wordmark { font-size: 1.45rem; }

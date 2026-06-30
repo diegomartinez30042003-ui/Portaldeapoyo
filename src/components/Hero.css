@@ -35,8 +35,7 @@
 }
 
 .hero-accent {
-  color: var(--color-coral-dark);
-  font-style: italic;
+  color: var(--color-secondary-dark);
 }
 
 .hero-subtitle {

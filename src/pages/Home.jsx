@@ -17,10 +17,10 @@ const CATEGORIES = [
   { name: 'Materiales para psicólogos y afines', icon: Stethoscope }
 ];
 
-// Orientación breve. Tonos del tricolor suave: rojo, azul, oro.
+// Orientación breve. Tonos de marca: azul marino, teal, verde.
 const GUIDANCE = [
-  { icon: <LifeBuoy size={22} />, tone: 'coral', title: 'En caso de emergencia', text: 'Si hay riesgo para la vida, comunícate primero con la línea de emergencias (171 / 911) o Protección Civil.' },
-  { icon: <HeartHandshake size={22} />, tone: 'primary', title: 'No estás solo', text: 'Estos materiales son un apoyo, no un reemplazo de la atención profesional. Pedir ayuda es un acto de cuidado.' },
+  { icon: <LifeBuoy size={22} />, tone: 'primary', title: 'En caso de emergencia', text: 'Si hay riesgo para la vida, comunícate primero con la línea de emergencias (171 / 911) o Protección Civil.' },
+  { icon: <HeartHandshake size={22} />, tone: 'secondary', title: 'No estás solo', text: 'Estos materiales son un apoyo, no un reemplazo de la atención profesional. Pedir ayuda es un acto de cuidado.' },
   { icon: <BookOpen size={22} />, tone: 'accent', title: 'Cómo usar el portal', text: 'Filtra por categoría o busca por palabra clave. Cada recurso abre o descarga el documento completo.' }
 ];
 

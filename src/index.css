@@ -1,54 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-  /* ===== Soft Venezuela palette ===== */
-  /* Blue (azul) — softened navy */
-  --color-primary-light: #E8EEF9;
-  --color-primary: #9FB8E2;
-  --color-primary-dark: #2F5AA8;
+  /* ===== PORTI palette (navy · teal · verde, del logo) ===== */
+  /* Azul marino — color principal y tinta de títulos */
+  --color-primary-light: #E7EEF6;
+  --color-primary: #7CA0C9;
+  --color-primary-dark: #0E2C54;
 
-  /* Gold (amarillo) — muted warm gold */
-  --color-accent-light: #FBF1DA;
-  --color-accent: #EFCD87;
-  --color-accent-dark: #B5852E;
+  /* Teal — color de marca secundario (la "i" del logo, ondas) */
+  --color-secondary-light: #E1F1F1;
+  --color-secondary: #79C5C7;
+  --color-secondary-dark: #16868A;
 
-  /* Clay red (rojo) — muted, never alarming */
-  --color-coral-light: #FAE9E6;
-  --color-coral: #E3A89E;
-  --color-coral-dark: #BB5749;
+  /* Verde — acento suave (lado izquierdo de la onda) */
+  --color-accent-light: #EEF6E5;
+  --color-accent: #AFD592;
+  --color-accent-dark: #5F9B43;
 
-  /* Sage — calm neutral accent for actions */
-  --color-secondary-light: #E9F1EA;
-  --color-secondary: #AFCBB0;
-  --color-secondary-dark: #5C8A64;
+  /* Tono de alerta, solo para semántica de error/emergencia puntual */
+  --color-coral-light: #FBEDEB;
+  --color-coral: #E0A59E;
+  --color-coral-dark: #C2544B;
 
-  /* ===== Surfaces & depth ===== */
-  --color-background: #FBF8F2;     /* warm paper */
-  --color-background-deep: #F2ECE1;
+  /* ===== Superficies ===== */
+  --color-background: #F7FAFA;       /* blanco frío, como el fondo del logo */
+  --color-background-deep: #EAF1F1;
   --color-surface: #FFFFFF;
-  --color-surface-tint: #FCFAF5;
+  --color-surface-tint: #F8FBFB;
 
-  --color-text-primary: #2B3140;
-  --color-text-secondary: #66707F;
-  --color-text-soft: #98A0AD;
+  --color-text-primary: #14294A;     /* tinta azul marino */
+  --color-text-secondary: #5A6B7C;
+  --color-text-soft: #92A1AE;
 
-  --color-border: #ECE6DB;
-  --color-border-strong: #DDD5C7;
+  --color-border: #E4EBEC;
+  --color-border-strong: #D3DEDF;
   --color-error: var(--color-coral-dark);
   --color-error-bg: var(--color-coral-light);
 
-  --shadow-xs: 0 1px 2px rgba(43, 49, 64, 0.05);
-  --shadow-sm: 0 2px 8px rgba(43, 49, 64, 0.06);
-  --shadow-md: 0 10px 28px -12px rgba(43, 49, 64, 0.16), 0 2px 6px rgba(43, 49, 64, 0.04);
-  --shadow-lg: 0 24px 50px -20px rgba(43, 49, 64, 0.22), 0 6px 14px rgba(43, 49, 64, 0.05);
+  --shadow-xs: 0 1px 2px rgba(20, 41, 74, 0.05);
+  --shadow-sm: 0 2px 8px rgba(20, 41, 74, 0.07);
+  --shadow-md: 0 10px 28px -12px rgba(20, 41, 74, 0.18), 0 2px 6px rgba(20, 41, 74, 0.05);
+  --shadow-lg: 0 24px 50px -20px rgba(20, 41, 74, 0.24), 0 6px 14px rgba(20, 41, 74, 0.06);
 
   --radius-sm: 10px;
-  --radius: 16px;
-  --radius-lg: 24px;
+  --radius: 18px;            /* más redondeado, en línea con el logo */
+  --radius-lg: 26px;
   --border-radius: var(--radius);
 
-  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Fraunces', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  /* Tipografía redondeada y amable, como el wordmark "PORTI" */
+  --font-body: 'Nunito', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Nunito', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+
+  /* Gradiente de marca (onda): verde → teal → azul marino */
+  --brand-wave: linear-gradient(90deg, #8BC36F 0%, #3FA9A6 38%, #16868A 62%, #0E2C54 100%);
 
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -68,16 +72,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--color-background);
-  /* A single, very soft warm wash — restrained, not the typical glowing-blob look */
   background-image:
-    radial-gradient(70rem 40rem at 50% -8rem, rgba(159, 184, 226, 0.16), transparent 70%);
+    radial-gradient(70rem 40rem at 50% -8rem, rgba(124, 160, 201, 0.16), transparent 70%);
   background-repeat: no-repeat;
 }
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  font-weight: 500;
-  letter-spacing: -0.01em;
+  font-weight: 800;
+  letter-spacing: -0.015em;
   color: var(--color-text-primary);
 }
 
@@ -92,20 +95,16 @@ button {
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-primary);
+  outline: 3px solid var(--color-secondary);
   outline-offset: 2px;
   border-radius: 6px;
 }
 
-/* Thin soft tricolor ribbon at the very top — a quiet Venezuelan note */
+/* Cinta superior con el gradiente de onda del logo */
 .flag-ribbon {
   height: 5px;
   width: 100%;
-  background: linear-gradient(90deg,
-    var(--color-primary) 0 33.33%,
-    var(--color-accent) 33.33% 66.66%,
-    var(--color-coral) 66.66% 100%);
-  opacity: 0.85;
+  background: var(--brand-wave);
 }
 
 .app-container {
@@ -116,7 +115,7 @@ button {
 
 main { flex-grow: 1; }
 
-/* Utilities */
+/* Utilidades */
 .container {
   max-width: 1180px;
   margin: 0 auto;
@@ -132,14 +131,14 @@ main { flex-grow: 1; }
 .text-muted { color: var(--color-text-secondary); }
 .text-sm { font-size: 0.875rem; }
 
-/* Buttons — flatter, tactile, not glassy */
+/* Botones */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 0.7rem 1.4rem;
   border-radius: 999px;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.95rem;
   transition: transform 0.18s var(--ease), box-shadow 0.18s var(--ease), background-color 0.18s var(--ease);
   gap: 0.5rem;
@@ -151,22 +150,22 @@ main { flex-grow: 1; }
   color: white;
   box-shadow: var(--shadow-sm);
 }
-.btn-primary:hover { background-color: #264c91; transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn-primary:hover { background-color: #0a213f; transform: translateY(-2px); box-shadow: var(--shadow-md); }
 
 .btn-secondary {
   background-color: var(--color-secondary-light);
   color: var(--color-secondary-dark);
 }
-.btn-secondary:hover { background-color: var(--color-secondary); color: #2f5a37; transform: translateY(-2px); }
+.btn-secondary:hover { background-color: var(--color-secondary); color: #0c5e61; transform: translateY(-2px); }
 
 .btn-outline {
   background-color: var(--color-surface);
   border: 1px solid var(--color-border-strong);
   color: var(--color-text-primary);
 }
-.btn-outline:hover { background-color: var(--color-surface-tint); border-color: var(--color-primary); transform: translateY(-1px); }
+.btn-outline:hover { background-color: var(--color-surface-tint); border-color: var(--color-secondary); transform: translateY(-1px); }
 
-/* Section heading shared style */
+/* Encabezado de sección */
 .section-head {
   max-width: 640px;
   margin-bottom: 2rem;
@@ -174,10 +173,10 @@ main { flex-grow: 1; }
 .section-eyebrow {
   display: inline-block;
   font-size: 0.78rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-accent-dark);
+  color: var(--color-secondary-dark);
   margin-bottom: 0.6rem;
 }
 .section-title {

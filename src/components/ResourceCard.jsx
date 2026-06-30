@@ -3,12 +3,12 @@ import './ResourceCard.css';
 
 // Acento de color por categoría (las tres carpetas del Drive): aporta
 // variedad y "vida" manteniendo la calma.
-// Soft Venezuela tricolor mapped to the three Drive folders:
-// cuentos → oro · padres → azul · profesionales → rojo arcilla.
+// Colores de marca PORTI por categoría (las tres carpetas del Drive):
+// cuentos → verde · padres → azul marino · profesionales → teal.
 const CATEGORY_ACCENT = {
   'Cuentos infantiles': 'accent',
   'Material para padres': 'primary',
-  'Materiales para psicólogos y afines': 'coral'
+  'Materiales para psicólogos y afines': 'secondary'
 };
 
 export default function ResourceCard({ resource }) {

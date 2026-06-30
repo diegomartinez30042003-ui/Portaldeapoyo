@@ -16,11 +16,13 @@ export default function Footer() {
 
         <div className="footer-grid">
           <div className="footer-col">
-            <h4 className="footer-title">Sobre este portal</h4>
+            <h4 className="footer-title">Sobre PORTI</h4>
             <p>
-              Reúne material psicoeducativo de acceso libre para acompañar a niñas, niños,
-              adolescentes y familias tras los sismos del 24 de junio de 2026 en la costa
-              norte de Venezuela (Yaracuy, Falcón, Carabobo, Aragua, La Guaira y zonas cercanas).
+              <strong>PORTI</strong> es el Portal sobre el impacto de las emergencias y
+              desastres en la salud mental. Reúne material psicoeducativo de acceso libre
+              para acompañar a niñas, niños, adolescentes y familias tras los sismos del
+              24 de junio de 2026 en la costa norte de Venezuela (Yaracuy, Falcón, Carabobo,
+              Aragua, La Guaira y zonas cercanas).
             </p>
             <p className="footer-note">
               Es un apoyo, <strong>no reemplaza la atención profesional</strong> de salud mental.

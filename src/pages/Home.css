@@ -36,9 +36,9 @@
   color: var(--tone-color);
 }
 
-.guide-card[data-tone="coral"]   { --tone-color: var(--color-coral-dark);   --tone-soft: var(--color-coral-light); }
-.guide-card[data-tone="primary"] { --tone-color: var(--color-primary-dark); --tone-soft: var(--color-primary-light); }
-.guide-card[data-tone="accent"]  { --tone-color: var(--color-accent-dark);  --tone-soft: var(--color-accent-light); }
+.guide-card[data-tone="primary"]   { --tone-color: var(--color-primary-dark);   --tone-soft: var(--color-primary-light); }
+.guide-card[data-tone="secondary"] { --tone-color: var(--color-secondary-dark); --tone-soft: var(--color-secondary-light); }
+.guide-card[data-tone="accent"]    { --tone-color: var(--color-accent-dark);    --tone-soft: var(--color-accent-light); }
 
 .guide-title {
   font-family: var(--font-body);
