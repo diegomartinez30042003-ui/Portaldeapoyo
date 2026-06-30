@@ -4,7 +4,7 @@ import { createContext, useContext } from 'react';
 // las tres carpetas del Drive (misma distribución). Se actualiza solo aquí,
 // en código, cuando se agrega material nuevo al Drive.
 //
-//   Cuentos infantiles (5) · Material para padres (10) · Materiales para psicólogos y afines (2)
+//   Cuentos infantiles (8) · Material para padres (11) · Materiales para psicólogos y afines (6)
 //
 const resources = [
   // === Cuentos infantiles ===
@@ -13,6 +13,9 @@ const resources = [
   { id: 3, title: 'Plaza Sésamo: Contención Emocional', description: 'Material oficial de Plaza Sésamo para acompañar y contener emocionalmente a los más pequeños.', category: 'Cuentos infantiles', type: 'PDF', url: './Material terremoto niños/Cuentos infantiles/Material Plaza Sesamo contención emocional.pdf' },
   { id: 4, title: 'Mi Miedo, Mi Guardián Personal', description: 'Lectura para resignificar el miedo como una herramienta natural de protección.', category: 'Cuentos infantiles', type: 'PDF', url: './Material terremoto niños/Cuentos infantiles/Mi miedo mi guardián personal.pdf' },
   { id: 5, title: 'Trinka y Sam: El Día que la Tierra Tembló', description: 'Cuento de Trinka y Sam para ayudar a las niñas y niños a procesar desastres naturales.', category: 'Cuentos infantiles', type: 'PDF', url: './Material terremoto niños/Cuentos infantiles/trinka_sam_the_day_the_earth_shook_sp.pdf' },
+  { id: 18, title: 'El Día que Todo se Movió', description: 'Cuento ilustrado para acompañar a las niñas y niños a comprender y nombrar lo que sintieron durante el sismo.', category: 'Cuentos infantiles', type: 'PDF', url: './Material terremoto niños/Cuentos infantiles/202010-RSC-vB6veFy91v-El_da_que_todo_se_movio.pdf' },
+  { id: 19, title: 'Cuando la Tierra se Mueve, Tus Manos me Sostienen', description: 'Cuento sobre la contención y el cariño de los cuidadores como refugio seguro ante el miedo.', category: 'Cuentos infantiles', type: 'PDF', url: './Material terremoto niños/Cuentos infantiles/CUENTO CUANDO LA TIERRA SE MUEVE, TUS MANOS ME SOSTIENEN (A4).pdf' },
+  { id: 20, title: 'El Tejedor Invisible del Corazón', description: 'Cuento para trabajar las emociones, los vínculos y la esperanza tras una pérdida.', category: 'Cuentos infantiles', type: 'PDF', url: './Material terremoto niños/Cuentos infantiles/El tejedor invisible del corazón.pdf' },
 
   // === Material para padres ===
   { id: 6, title: 'Respondiendo a las Necesidades Emocionales de los Niños', description: 'Guía de la AAP y CHLA para padres y cuidadores tras una emergencia.', category: 'Material para padres', type: 'Guía Escrita', url: './Material terremoto niños/Material para padres/CHLA-AAP-Responding-to-Childrens-Emotional-Needs-Spanish_0.pdf' },
@@ -25,10 +28,15 @@ const resources = [
   { id: 13, title: 'Plan para Manejar los Recuerdos del Evento', description: 'Pasos prácticos para enfrentar los detonantes y los recuerdos intrusivos.', category: 'Material para padres', type: 'Guía Escrita', url: './Material terremoto niños/Material para padres/making_a_plan_dealing_with_things_that_remind_you_what_happened_sp.pdf' },
   { id: 14, title: 'Actividades Simples para Niños y Adolescentes', description: 'Dinámicas prácticas para hacer en casa y reducir la tensión y el estrés.', category: 'Material para padres', type: 'Actividad Práctica', url: './Material terremoto niños/Material para padres/simple_activities_for_children_and_adolescents_spanish.pdf' },
   { id: 15, title: '12 Conceptos Básicos sobre el Estrés Traumático', description: 'Marco teórico para entender el comportamiento de la familia ante el trauma.', category: 'Material para padres', type: 'PDF', url: './Material terremoto niños/Material para padres/the_12_core_concepts_for_understanding_traumatic_stress_responses_in_children_and_families_sp.pdf' },
+  { id: 21, title: 'Guía Familiar ante Sismos y Maremotos', description: 'Recomendaciones prácticas de preparación y respuesta para toda la familia ante sismos y maremotos.', category: 'Material para padres', type: 'Guía Escrita', url: './Material terremoto niños/Material para padres/guia-familiar-sismos-maremotos.pdf' },
 
   // === Materiales para psicólogos y afines ===
   { id: 16, title: 'Guía de Primeros Auxilios Psicológicos', description: 'Manual general para la intervención inmediata en situaciones de crisis.', category: 'Materiales para psicólogos y afines', type: 'PDF', url: './Material terremoto niños/Materiales para psicólogos y afines/Guia Primeros Auxilios Psicologicos.pdf' },
-  { id: 17, title: 'Protocolo ACERCARSE (Primeros Auxilios Psicológicos)', description: 'Técnica estructurada de contención y estabilización emocional.', category: 'Materiales para psicólogos y afines', type: 'Guía Escrita', url: './Material terremoto niños/Materiales para psicólogos y afines/PRIMEROS AUXILIOS PSICOLÓGICOS PROTOCOLO ACERCARSE.pdf' }
+  { id: 17, title: 'Protocolo ACERCARSE (Primeros Auxilios Psicológicos)', description: 'Técnica estructurada de contención y estabilización emocional.', category: 'Materiales para psicólogos y afines', type: 'Guía Escrita', url: './Material terremoto niños/Materiales para psicólogos y afines/PRIMEROS AUXILIOS PSICOLÓGICOS PROTOCOLO ACERCARSE.pdf' },
+  { id: 22, title: 'Manual ABCDE de Primeros Auxilios Psicológicos', description: 'Método ABCDE para aplicar PAP en crisis individuales y colectivas (PUC de Chile · CIGIDEN).', category: 'Materiales para psicólogos y afines', type: 'PDF', url: './Material terremoto niños/Materiales para psicólogos y afines/59897_auxiliar.pdf' },
+  { id: 23, title: 'Fichas Psicológicas de Intervención', description: 'Fichas de trabajo para apoyar la intervención y la contención psicológica.', category: 'Materiales para psicólogos y afines', type: 'Guía Escrita', url: './Material terremoto niños/Materiales para psicólogos y afines/Fichas Psicológicas.pdf' },
+  { id: 24, title: 'Guía de Apoyo Psicosocial en Emergencias (Save the Children)', description: 'Manual de Save the Children para el apoyo psicosocial a la niñez en situaciones de emergencia.', category: 'Materiales para psicólogos y afines', type: 'PDF', url: './Material terremoto niños/Materiales para psicólogos y afines/Guia-de-apoyo-psicosocial-en-situaciones-de-emergencia-Save-the-Children.pdf' },
+  { id: 25, title: 'Manual de Primeros Auxilios Psicológicos para Población Migrante', description: 'Guía de PAP con enfoque en población migrante y desplazada.', category: 'Materiales para psicólogos y afines', type: 'PDF', url: './Material terremoto niños/Materiales para psicólogos y afines/MANUAL-PRIMEROS-AUXILIOS-PSICOLOGICOS-POBLACION-MIGRANTE.pdf' }
 ];
 
 const AppContext = createContext();
