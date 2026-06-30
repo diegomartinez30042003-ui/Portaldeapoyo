@@ -12,9 +12,8 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="container navbar-content">
-        <Link to="/" className="navbar-brand" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+        <Link to="/" className="navbar-brand" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="PORTI — inicio">
           <Logo />
-          <span className="brand-tagline">Impacto de las emergencias y desastres en la salud mental</span>
         </Link>
 
         <div className="navbar-actions">
