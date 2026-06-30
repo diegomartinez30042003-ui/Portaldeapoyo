@@ -1,0 +1,109 @@
+.social-section {
+  margin-top: 4rem;
+  scroll-margin-top: 5.5rem;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.social-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.22s var(--ease), box-shadow 0.22s var(--ease);
+}
+
+.social-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.social-card-top {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.social-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.9rem;
+  height: 2.9rem;
+  border-radius: 14px;
+  background: var(--brand-soft, var(--color-primary-light));
+  color: var(--brand-color, var(--color-primary-dark));
+  flex-shrink: 0;
+}
+
+.social-platform {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-soft);
+}
+
+.social-name {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.social-handle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--brand-color, var(--color-primary-dark));
+  margin-top: 0.15rem;
+}
+
+.social-desc {
+  font-size: 0.92rem;
+  color: var(--color-text-secondary);
+  margin: 0.7rem 0 1.25rem;
+  flex-grow: 1;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  align-self: flex-start;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--brand-color, var(--color-primary-dark));
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: var(--brand-soft, var(--color-primary-light));
+  transition: transform 0.18s var(--ease);
+}
+
+.social-link:hover { transform: translateY(-1px); }
+
+.social-pending {
+  align-self: flex-start;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--color-text-soft);
+  border: 1px dashed var(--color-border-strong);
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+}
+
+/* Brand colours (soft) */
+.social-card[data-platform="instagram"] { --brand-color: #C13584; --brand-soft: #FBEAF3; }
+.social-card[data-platform="tiktok"]    { --brand-color: #1d1d1f; --brand-soft: #ECECEE; }
+.social-card[data-platform="facebook"]  { --brand-color: #1877F2; --brand-soft: #E7F0FE; }
+.social-card[data-platform="youtube"]   { --brand-color: #C4302B; --brand-soft: #FBEAE9; }
+.social-card[data-platform="x"]         { --brand-color: #1d1d1f; --brand-soft: #ECECEE; }
+.social-card[data-platform="whatsapp"]  { --brand-color: #1FA855; --brand-soft: #E6F6EC; }
