@@ -5,10 +5,14 @@
   display: block;
 }
 
-@media (max-width: 640px) {
-  .porti-logo { height: 2.4rem; }
+@media (max-width: 720px) {
+  .porti-logo { height: 2.5rem; }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 480px) {
   .porti-logo { height: 2rem; }
+}
+
+@media (max-width: 360px) {
+  .porti-logo { height: 1.7rem; }
 }
