@@ -28,10 +28,8 @@ jobs:
       - run: npm run build
       # Evita el procesamiento Jekyll (preserva carpetas con espacios/acentos).
       - run: touch dist/.nojekyll
-      # Activa Pages automáticamente si aún no lo está (modo "GitHub Actions").
+      # Requiere que Pages ya esté activado en Settings → Pages → Source: GitHub Actions.
       - uses: actions/configure-pages@v5
-        with:
-          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
