@@ -10,25 +10,60 @@ import './SocialMedia.css';
  */
 const RECOMMENDED = [
   {
-    name: 'Cuenta por agregar',
-    handle: '@usuario',
+    name: 'Cecodap',
+    handle: '@cecodap',
     platform: 'instagram',
-    description: 'Infografías y consejos breves para acompañar emocionalmente a la niñez.',
-    url: ''
+    description: 'Organización venezolana por los derechos de la niñez y la adolescencia; orientación y apoyo psicosocial a las familias.',
+    url: 'https://www.instagram.com/cecodap'
   },
   {
-    name: 'Cuenta por agregar',
-    handle: '@usuario',
-    platform: 'tiktok',
-    description: 'Videos cortos con técnicas de calma, respiración y manejo del miedo.',
-    url: ''
+    name: 'UNICEF Venezuela',
+    handle: '@unicefvenezuela',
+    platform: 'instagram',
+    description: 'Fondo de las Naciones Unidas para la Infancia en Venezuela: protección y bienestar de niñas, niños y adolescentes.',
+    url: 'https://www.instagram.com/unicefvenezuela'
   },
   {
-    name: 'Cuenta por agregar',
-    handle: '@usuario',
-    platform: 'facebook',
-    description: 'Comunidad de apoyo y avisos sobre jornadas de atención psicológica.',
-    url: ''
+    name: 'Psicochamos',
+    handle: '@psicochamos',
+    platform: 'instagram',
+    description: 'Psicología y salud mental para adolescentes y jóvenes venezolanos, en un lenguaje cercano.',
+    url: 'https://www.instagram.com/psicochamos'
+  },
+  {
+    name: 'Acuarela Familiar',
+    handle: '@acuarelafamiliar',
+    platform: 'instagram',
+    description: 'Acompañamiento en crianza, vínculos y bienestar emocional de la familia.',
+    url: 'https://www.instagram.com/acuarelafamiliar'
+  },
+  {
+    name: 'Spacio Emocional',
+    handle: '@spacioemocional',
+    platform: 'instagram',
+    description: 'Educación y contención emocional para el día a día.',
+    url: 'https://www.instagram.com/spacioemocional'
+  },
+  {
+    name: 'Psicodiáspora',
+    handle: '@psicodiaspora',
+    platform: 'instagram',
+    description: 'Apoyo psicológico para venezolanas y venezolanos en la diáspora.',
+    url: 'https://www.instagram.com/psicodiaspora'
+  },
+  {
+    name: 'PsicoData Venezuela',
+    handle: '@psicodatavzla',
+    platform: 'instagram',
+    description: 'Divulgación de salud mental y psicología basada en evidencia en Venezuela.',
+    url: 'https://www.instagram.com/psicodatavzla'
+  },
+  {
+    name: 'Una Distancia',
+    handle: '@una.distancia',
+    platform: 'instagram',
+    description: 'Contenido de salud mental y acompañamiento emocional.',
+    url: 'https://www.instagram.com/una.distancia'
   }
 ];
 

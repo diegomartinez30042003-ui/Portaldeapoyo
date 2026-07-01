@@ -36,6 +36,9 @@ export default function ResourceCard({ resource }) {
         <span className="resource-category-tag">{resource.category}</span>
       </div>
       <div className="resource-card-body">
+        {resource.subcategory && (
+          <span className="resource-subcategory">{resource.subcategory}</span>
+        )}
         <h3 className="resource-title">{resource.title}</h3>
         <p className="resource-desc">{resource.description}</p>
       </div>
