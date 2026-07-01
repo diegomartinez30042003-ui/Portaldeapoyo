@@ -1,7 +1,12 @@
 import { Search, FileHeart, Wifi, Unlock } from 'lucide-react';
+import { useAppContext } from '../store';
 import './Hero.css';
 
 export default function Hero({ searchTerm, setSearchTerm }) {
+  // Cuenta solo los materiales del catálogo (no las cuentas de redes sociales).
+  const { resources } = useAppContext();
+  const count = resources.length;
+
   return (
     <section className="hero">
       <div className="container hero-content">
@@ -29,7 +34,7 @@ export default function Hero({ searchTerm, setSearchTerm }) {
         </div>
 
         <ul className="hero-meta" aria-label="Características del portal">
-          <li><FileHeart size={16} aria-hidden="true" /> 17 materiales cuidados</li>
+          <li><FileHeart size={16} aria-hidden="true" /> {count} materiales cuidadosamente seleccionados</li>
           <li><Unlock size={16} aria-hidden="true" /> Acceso libre y gratuito</li>
           <li><Wifi size={16} aria-hidden="true" /> Funciona sin conexión</li>
         </ul>

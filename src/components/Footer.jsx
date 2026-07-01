@@ -31,7 +31,7 @@ export default function Footer() {
 
           <div className="footer-col">
             <h4 className="footer-title">Buscar personas y reportar daños</h4>
-            <a className="footer-link" href="https://www.civis.com.ve" target="_blank" rel="noopener noreferrer">
+            <a className="footer-link" href="https://civisvenezuela.com/" target="_blank" rel="noopener noreferrer">
               <Search size={16} aria-hidden="true" /> CIVIS Venezuela — plataforma ciudadana
             </a>
             <a className="footer-link" href="https://www.paho.org/es/terremotos-venezuela-2026" target="_blank" rel="noopener noreferrer">
