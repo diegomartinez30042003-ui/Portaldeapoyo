@@ -3,6 +3,7 @@ import { AppProvider } from './store';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
+import QuienesSomos from './pages/QuienesSomos';
 import './App.css';
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* Sitio de una sola página: cualquier ruta vuelve al inicio */}
+            <Route path="/quienes-somos" element={<QuienesSomos />} />
+            {/* Cualquier otra ruta vuelve al inicio */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
           <Footer />
