@@ -1,6 +1,9 @@
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Mail } from 'lucide-react';
 import Logo from './Logo';
 import './Navbar.css';
+
+const EMAIL = 'portaldeayudaemergenciasydesastres@gmail.com';
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -33,6 +36,10 @@ export default function Navbar() {
           <button className="nav-link" onClick={() => goToSection('materiales')}>Materiales</button>
           <button className="nav-link" onClick={() => goToSection('redes')}>Redes</button>
           <button className="nav-link nav-link-help" onClick={() => goToSection('ayuda')}>Líneas de ayuda</button>
+          <a className="nav-email" href={`mailto:${EMAIL}`} title={EMAIL} aria-label={`Escríbenos a ${EMAIL}`}>
+            <Mail size={17} aria-hidden="true" />
+            <span className="nav-email-text">Contacto</span>
+          </a>
         </div>
       </div>
     </nav>

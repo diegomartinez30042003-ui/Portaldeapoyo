@@ -1,18 +1,18 @@
 .porti-logo {
-  height: 3rem;
+  height: 3.4rem;      /* logo compacto (aspect ~2.95:1): PORTI + tagline legibles */
   width: auto;
   max-width: 100%;
   display: block;
 }
 
 @media (max-width: 720px) {
-  .porti-logo { height: 2.5rem; }
+  .porti-logo { height: 2.9rem; }
 }
 
 @media (max-width: 480px) {
-  .porti-logo { height: 2rem; }
+  .porti-logo { height: 2.5rem; }
 }
 
 @media (max-width: 360px) {
-  .porti-logo { height: 1.7rem; }
+  .porti-logo { height: 2.1rem; }
 }

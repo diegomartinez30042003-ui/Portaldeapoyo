@@ -62,7 +62,7 @@ const RECOMMENDED = [
     name: 'Una Distancia',
     handle: '@una.distancia',
     platform: 'instagram',
-    description: 'Contenido de salud mental y acompañamiento emocional.',
+    description: 'Cuenta dedicada a la literatura y el psicoanálisis.',
     url: 'https://www.instagram.com/una.distancia'
   }
 ];

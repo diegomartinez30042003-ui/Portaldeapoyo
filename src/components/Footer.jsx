@@ -1,5 +1,7 @@
-import { Phone, Globe, Search, Heart } from 'lucide-react';
+import { Phone, Globe, Search, Heart, Mail } from 'lucide-react';
 import './Footer.css';
+
+const EMAIL = 'portaldeayudaemergenciasydesastres@gmail.com';
 
 export default function Footer() {
   return (
@@ -12,6 +14,21 @@ export default function Footer() {
             inmediato con la línea nacional de emergencias <strong>171 / 911</strong> o
             con Protección Civil de tu localidad.
           </p>
+        </div>
+
+        <div className="footer-cta">
+          <span className="footer-cta-icon"><Mail size={22} aria-hidden="true" /></span>
+          <div className="footer-cta-text">
+            <h4>¿Conoces material útil para compartir?</h4>
+            <p>
+              Si tienes guías, cuentos o recursos sobre salud mental en emergencias y desastres,
+              nos encantaría conocerlos. Escríbenos y ayúdanos a que PORTI siga creciendo.
+            </p>
+            <a className="footer-cta-email" href={`mailto:${EMAIL}`}>{EMAIL}</a>
+          </div>
+          <a className="footer-cta-btn" href={`mailto:${EMAIL}?subject=Material%20recomendado%20para%20PORTI`}>
+            <Mail size={16} aria-hidden="true" /> Enviar material
+          </a>
         </div>
 
         <div className="footer-grid">
