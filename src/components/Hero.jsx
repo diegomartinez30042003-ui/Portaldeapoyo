@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { Search, FileHeart, Wifi, Unlock } from 'lucide-react';
 import { useAppContext } from '../store';
 import './Hero.css';
@@ -6,6 +7,22 @@ export default function Hero({ searchTerm, setSearchTerm }) {
   // Cuenta solo los materiales del catálogo (no las cuentas de redes sociales).
   const { resources } = useAppContext();
   const count = resources.length;
+
+  // Envía evento al dataLayer de GTM cuando el usuario deja de escribir (500ms).
+  const timerRef = useRef(null);
+  useEffect(() => {
+    if (!searchTerm.trim()) return;
+    clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(() => {
+      if (window.dataLayer) {
+        window.dataLayer.push({
+          event: 'busqueda_portal',
+          search_term: searchTerm.trim()
+        });
+      }
+    }, 500);
+    return () => clearTimeout(timerRef.current);
+  }, [searchTerm]);
 
   return (
     <section className="hero">
