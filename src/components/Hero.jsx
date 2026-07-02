@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Search, FileHeart, Wifi, Unlock } from 'lucide-react';
+import { Search, FileHeart, Unlock } from 'lucide-react';
 import { useAppContext } from '../store';
 import './Hero.css';
 
@@ -53,7 +53,6 @@ export default function Hero({ searchTerm, setSearchTerm }) {
         <ul className="hero-meta" aria-label="Características del portal">
           <li><FileHeart size={16} aria-hidden="true" /> {count} materiales cuidadosamente seleccionados</li>
           <li><Unlock size={16} aria-hidden="true" /> Acceso libre y gratuito</li>
-          <li><Wifi size={16} aria-hidden="true" /> Funciona sin conexión</li>
         </ul>
       </div>
 

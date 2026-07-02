@@ -27,14 +27,14 @@ const RECOMMENDED = [
     name: 'Psicochamos',
     handle: '@psicochamos',
     platform: 'instagram',
-    description: 'Psicología y salud mental para adolescentes y jóvenes venezolanos, en un lenguaje cercano.',
+    description: 'Psicología clínica infantil y del adolescente; contenido sobre desarrollo y crianza.',
     url: 'https://www.instagram.com/psicochamos'
   },
   {
     name: 'Acuarela Familiar',
     handle: '@acuarelafamiliar',
     platform: 'instagram',
-    description: 'Acompañamiento en crianza, vínculos y bienestar emocional de la familia.',
+    description: 'Centro de bienestar familiar: psicología y terapias expresivas, con escuela para familias.',
     url: 'https://www.instagram.com/acuarelafamiliar'
   },
   {
@@ -48,14 +48,14 @@ const RECOMMENDED = [
     name: 'Psicodiáspora',
     handle: '@psicodiaspora',
     platform: 'instagram',
-    description: 'Apoyo psicológico para venezolanas y venezolanos en la diáspora.',
+    description: 'Red de psicólogos y psiquiatras venezolanos en la diáspora, con un directorio de profesionales.',
     url: 'https://www.instagram.com/psicodiaspora'
   },
   {
     name: 'PsicoData Venezuela',
     handle: '@psicodatavzla',
     platform: 'instagram',
-    description: 'Divulgación de salud mental y psicología basada en evidencia en Venezuela.',
+    description: 'Iniciativa de la UCAB que investiga y divulga datos sobre salud mental en Venezuela (incluye Psicomapa).',
     url: 'https://www.instagram.com/psicodatavzla'
   },
   {
@@ -64,6 +64,27 @@ const RECOMMENDED = [
     platform: 'instagram',
     description: 'Cuenta dedicada a la literatura y el psicoanálisis.',
     url: 'https://www.instagram.com/una.distancia'
+  },
+  {
+    name: 'Federación de Psicólogos de Venezuela',
+    handle: '@fpv_ve',
+    platform: 'instagram',
+    description: 'Organización gremial que agrupa y representa a los profesionales de la psicología en Venezuela.',
+    url: 'https://www.instagram.com/fpv_ve'
+  },
+  {
+    name: 'Redsiliente',
+    handle: '@redsiliente',
+    platform: 'instagram',
+    description: 'Contenido sobre resiliencia y salud mental.',
+    url: 'https://www.instagram.com/redsiliente'
+  },
+  {
+    name: 'Psicología para Mí',
+    handle: '@psicologiaparami',
+    platform: 'instagram',
+    description: 'Divulgación de psicología y psicoterapia; temas de crianza, migración y bienestar.',
+    url: 'https://www.instagram.com/psicologiaparami'
   }
 ];
 
