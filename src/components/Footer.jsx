@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Phone, Globe, Search, Heart, Mail } from 'lucide-react';
 import './Footer.css';
 
@@ -69,7 +70,11 @@ export default function Footer() {
           <span className="footer-brand">
             <Heart size={15} aria-hidden="true" /> Hecho con cuidado para las familias de Venezuela
           </span>
-          <span>Material de distribución libre · Sin fines de lucro</span>
+          <span className="footer-bottom-links">
+            <Link to="/aviso-legal" className="footer-legal-link">Aviso legal y derechos de autor</Link>
+            <span className="footer-sep">·</span>
+            Material de distribución libre · Sin fines de lucro
+          </span>
         </div>
       </div>
     </footer>

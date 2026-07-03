@@ -158,3 +158,19 @@
 .footer-brand svg {
   color: var(--color-accent-dark);
 }
+
+.footer-bottom-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-legal-link {
+  color: var(--color-primary-dark);
+  font-weight: 700;
+}
+
+.footer-legal-link:hover { text-decoration: underline; }
+
+.footer-sep { color: var(--color-text-soft); }

@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import QuienesSomos from './pages/QuienesSomos';
+import AvisoLegal from './pages/AvisoLegal';
 import './App.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/quienes-somos" element={<QuienesSomos />} />
+            <Route path="/aviso-legal" element={<AvisoLegal />} />
             {/* Cualquier otra ruta vuelve al inicio */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
