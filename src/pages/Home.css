@@ -130,3 +130,35 @@
 @media (max-width: 640px) {
   .guide-strip { margin-top: 0; }
 }
+
+/* ===== Aviso sobre los materiales (portada) ===== */
+.legal-section {
+  margin-top: 4rem;
+  scroll-margin-top: 5.5rem;
+}
+
+.legal-body {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-secondary-dark);
+  border-radius: var(--radius);
+  padding: 1.75rem 2rem;
+  box-shadow: var(--shadow-xs);
+}
+
+.legal-body p {
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.legal-body p:last-child { margin-bottom: 0; }
+
+.legal-body strong { color: var(--color-text-primary); }
+
+.legal-mail {
+  color: var(--color-secondary-dark);
+  font-weight: 700;
+}
+
+.legal-mail:hover { text-decoration: underline; }

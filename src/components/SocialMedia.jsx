@@ -85,6 +85,20 @@ const RECOMMENDED = [
     platform: 'instagram',
     description: 'Divulgación de psicología y psicoterapia; temas de crianza, migración y bienestar.',
     url: 'https://www.instagram.com/psicologiaparami'
+  },
+  {
+    name: 'Familiando',
+    handle: '@familiando',
+    platform: 'instagram',
+    description: 'Psicología de familia y crianza; directorio de profesionales en Venezuela y otros países.',
+    url: 'https://www.instagram.com/familiando'
+  },
+  {
+    name: 'NCTSN',
+    handle: '@nctsn',
+    platform: 'instagram',
+    description: 'Red Nacional para el Estrés Traumático Infantil (EE. UU.), fuente de varios materiales de este portal. Contenido en inglés.',
+    url: 'https://www.instagram.com/nctsn'
   }
 ];
 
