@@ -118,6 +118,30 @@
   .resources-grid { grid-template-columns: 1fr; }
 }
 
+/* Botón para desplegar/plegar el catálogo completo */
+.show-all-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.75rem;
+}
+
+.show-all-btn {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  padding: 0.8rem 1.7rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.show-all-btn:hover {
+  border-color: var(--color-secondary-dark);
+  color: var(--color-secondary-dark);
+  background: var(--color-secondary-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
 .no-results {
   text-align: center;
   padding: 4rem 1rem;

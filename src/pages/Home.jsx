@@ -5,7 +5,7 @@ import ResourceCard from '../components/ResourceCard';
 import SocialMedia from '../components/SocialMedia';
 import {
   LayoutGrid, BookHeart, HeartHandshake, Stethoscope,
-  LifeBuoy, BookOpen
+  LifeBuoy, BookOpen, ChevronDown, ChevronUp
 } from 'lucide-react';
 import './Home.css';
 
@@ -39,6 +39,21 @@ export default function Home() {
   });
 
   const count = filteredResources.length;
+
+  // Para evitar una página demasiado larga, mostramos solo las primeras
+  // tarjetas y un botón para desplegar el catálogo completo.
+  const VISIBLE = 9;
+  const [showAll, setShowAll] = useState(false);
+  const visibleResources = showAll ? filteredResources : filteredResources.slice(0, VISIBLE);
+  const hasMore = count > VISIBLE;
+
+  const toggleShowAll = () => {
+    if (showAll) {
+      // Al plegar, volvemos al inicio del catálogo para no dejar al usuario perdido.
+      document.getElementById('materiales')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    setShowAll(!showAll);
+  };
 
   return (
     <div className="home-page">
@@ -90,11 +105,24 @@ export default function Home() {
           </p>
 
           {count > 0 ? (
-            <div className="resources-grid">
-              {filteredResources.map(resource => (
-                <ResourceCard key={resource.id} resource={resource} />
-              ))}
-            </div>
+            <>
+              <div className="resources-grid">
+                {visibleResources.map(resource => (
+                  <ResourceCard key={resource.id} resource={resource} />
+                ))}
+              </div>
+              {hasMore && (
+                <div className="show-all-wrap">
+                  <button type="button" className="btn show-all-btn" onClick={toggleShowAll}>
+                    {showAll ? (
+                      <>Mostrar menos <ChevronUp size={18} aria-hidden="true" /></>
+                    ) : (
+                      <>Ver todos los materiales ({count}) <ChevronDown size={18} aria-hidden="true" /></>
+                    )}
+                  </button>
+                </div>
+              )}
+            </>
           ) : (
             <div className="no-results">
               <p>No se encontraron recursos con esos criterios.</p>
