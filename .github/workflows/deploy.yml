@@ -43,7 +43,3 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
-        # El sitio pesa ~570 MB (PDFs): ampliamos el tiempo de espera del
-        # despliegue, que por defecto es de 10 minutos.
-        with:
-          timeout: 1800000
