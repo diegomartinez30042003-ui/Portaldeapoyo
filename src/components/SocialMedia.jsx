@@ -99,6 +99,27 @@ const RECOMMENDED = [
     platform: 'instagram',
     description: 'Red Nacional para el Estrés Traumático Infantil (EE. UU.), fuente de varios materiales de este portal. Contenido en inglés.',
     url: 'https://www.instagram.com/nctsn'
+  },
+  {
+    name: 'Alejandra Sapene',
+    handle: '@alesapene',
+    platform: 'instagram',
+    description: 'Psicóloga clínica (UCAB) y fundadora de PORTI. Consultas y supervisión clínica en línea; salud mental en emergencias y desastres.',
+    url: 'https://www.instagram.com/alesapene'
+  },
+  {
+    name: 'Amputee Coalition',
+    handle: '@amputeecoalition',
+    platform: 'instagram',
+    description: 'Organización de apoyo a personas con amputación y sus familias: recursos, rehabilitación y comunidad. Contenido en inglés.',
+    url: 'https://www.instagram.com/amputeecoalition'
+  },
+  {
+    name: 'Red Venezolana de SMP',
+    handle: '@redvenezolanadesmp',
+    platform: 'instagram',
+    description: 'Red venezolana de profesionales dedicada a la salud mental perinatal.',
+    url: 'https://www.instagram.com/redvenezolanadesmp'
   }
 ];
 
