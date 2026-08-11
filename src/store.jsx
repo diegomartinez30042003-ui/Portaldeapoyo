@@ -4,7 +4,7 @@ import { createContext, useContext } from 'react';
 // la estructura de carpetas del Drive (misma distribución). Se actualiza solo
 // aquí, en código, cuando se agrega o reorganiza material en el Drive.
 //
-//   Cuentos infantiles (23) · Material para padres (22) · Materiales para psicólogos y afines (50) = 95
+//   Cuentos infantiles (23) · Material para padres (22) · Materiales para psicólogos y afines (52) = 97
 //
 const R = './Material terremoto niños';
 
@@ -72,6 +72,7 @@ const resources = [
   { id: 92, category: 'Materiales para psicólogos y afines', subcategory: 'Atención psicosocial', type: 'Artículo', title: 'Prevención e Intervenciones Tempranas', description: 'Artículo científico sobre prevención e intervención temprana ante el impacto psicológico de un desastre.', url: `${R}/Materiales para psicólogos y afines/Atención psicosocial/Prevención e intervenciones tempranas.pdf` },
   { id: 93, category: 'Materiales para psicólogos y afines', subcategory: 'Atención psicosocial', type: 'PDF', title: 'Evaluación y Vigilancia Psicosocial en Desastres', description: 'Libro sobre la evaluación y el seguimiento psicosocial de las poblaciones afectadas. En inglés.', url: `${R}/Materiales para psicólogos y afines/Atención psicosocial/Disaster Psychosocial Assessment and Surveillance.pdf` },
   { id: 94, category: 'Materiales para psicólogos y afines', subcategory: 'Atención psicosocial', type: 'Guía Escrita', title: 'Recuperación y Capacidad de Adaptación tras un Desastre: Etapas', description: 'Documento sobre las etapas de la recuperación y la adaptación de las comunidades tras un desastre.', url: `${R}/Materiales para psicólogos y afines/Atención psicosocial/Recuperación y capacidad de adaptación tras un desastre - etapas.pdf` },
+  { id: 96, category: 'Materiales para psicólogos y afines', subcategory: 'Atención psicosocial', type: 'PDF', title: 'Protección de la Salud Mental en Situaciones de Desastres y Emergencias', description: 'Manual de la Organización Panamericana de la Salud (OPS/OMS) de la serie Manuales y Guías sobre Desastres.', url: `${R}/Materiales para psicólogos y afines/Atención psicosocial/Protección de la salud mental en situaciones de desastres y emergencias.pdf` },
 
   // ===== Materiales para psicólogos y afines · Culpa del sobreviviente =====
   { id: 27, category: 'Materiales para psicólogos y afines', subcategory: 'Culpa del sobreviviente', type: 'Artículo', title: 'Culpa del Superviviente y TEPT (Terremoto Turquía-Siria)', description: 'Artículo científico sobre la culpa del superviviente como mediadora del TEPT. En inglés.', url: `${R}/Materiales para psicólogos y afines/Culpa del sobreviviente/Articulo cientifico -Survivor Guilt as a Mediator Between Post-Traumatic Stress Disorder and Pessimism Schema After Türkiye-Syria Earthquake.pdf` },
@@ -97,6 +98,7 @@ const resources = [
   { id: 81, category: 'Materiales para psicólogos y afines', subcategory: 'Material sobre la muerte y duelo', type: 'PDF', title: 'El Mensaje de las Lágrimas', description: 'Libro técnico sobre el duelo y su elaboración en el acompañamiento terapéutico.', url: `${R}/Materiales para psicólogos y afines/Material sobre la muerte y duelo/Libro técnico El mensaje de las lágrimas.pdf` },
   { id: 82, category: 'Materiales para psicólogos y afines', subcategory: 'Material sobre la muerte y duelo', type: 'PDF', title: 'Trauma, Culpa y Duelo (Sales)', description: 'Libro técnico sobre la relación entre trauma, culpa y duelo en la clínica.', url: `${R}/Materiales para psicólogos y afines/Material sobre la muerte y duelo/Libro técnico Sales - Trauma, culpa y duelo.pdf` },
   { id: 95, category: 'Materiales para psicólogos y afines', subcategory: 'Material sobre la muerte y duelo', type: 'Artículo', title: 'Duelo y Rumiación (Payás Puigarnau)', description: 'Artículo científico sobre el papel de la rumiación en el proceso de duelo.', url: `${R}/Materiales para psicólogos y afines/Material sobre la muerte y duelo/Artículo Payás Puigarnau - duelo y rumiación.pdf` },
+  { id: 97, category: 'Materiales para psicólogos y afines', subcategory: 'Material sobre la muerte y duelo', type: 'Guía Escrita', title: 'Modelo CUIDAR', description: 'Material propio de PORTI: modelo CUIDAR para el acompañamiento en el duelo.', url: `${R}/Materiales para psicólogos y afines/Material sobre la muerte y duelo/Modelo CUIDAR - PORTI.pdf` },
 
   // ===== Materiales para psicólogos y afines · Material para pacientes amputados =====
   { id: 83, category: 'Materiales para psicólogos y afines', subcategory: 'Pacientes amputados', type: 'Artículo', title: 'Escuchar a Niños con Pérdida de Miembro Inferior', description: 'Artículo científico con un protocolo de investigación sobre necesidades protésicas, dolor y calidad de vida. En inglés.', url: `${R}/Materiales para psicólogos y afines/Material pacientes amputados/Listening to children with lower limb loss - research toolkit.pdf` },
