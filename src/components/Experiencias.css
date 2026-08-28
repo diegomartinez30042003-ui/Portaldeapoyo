@@ -82,11 +82,50 @@
 
 .exp-gracias-nota { font-size: 0.85rem !important; color: var(--color-text-soft) !important; margin-bottom: 1.1rem !important; }
 
+/* Campo trampa anti-spam: fuera de la vista pero accesible para los bots */
+.exp-trampa {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.exp-error {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--color-coral-light);
+  border: 1px solid var(--color-coral);
+  color: #8c3a32;
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.85rem;
+  font-size: 0.87rem;
+  margin-bottom: 0.9rem;
+}
+
+.exp-submit:disabled {
+  opacity: 0.75;
+  cursor: progress;
+  transform: none;
+}
+
+.exp-spin { animation: exp-giro 0.9s linear infinite; }
+
+@keyframes exp-giro { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .exp-spin { animation: none; }
+}
+
 /* ===== Experiencias publicadas ===== */
 .exp-lista {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  max-height: 34rem;
+  overflow-y: auto;
+  padding-right: 0.25rem;
 }
 
 .exp-card {

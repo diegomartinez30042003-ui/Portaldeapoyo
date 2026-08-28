@@ -1,43 +1,79 @@
-import { useState } from 'react';
-import { MessageCircleHeart, Send, Quote, CheckCircle2 } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { MessageCircleHeart, Send, Quote, CheckCircle2, Loader2, AlertCircle } from 'lucide-react';
+import { supabaseListo } from '../config';
+import { listarExperiencias, guardarExperiencia, formatearFecha } from '../experienciasApi';
 import './Experiencias.css';
 
 const EMAIL = 'portaldeayudaemergenciasydesastres@gmail.com';
-
-/*
- * Experiencias publicadas.
- * PORTI revisa cada mensaje antes de publicarlo: para añadir uno, agrega
- * aquí un objeto { nombre, texto, fecha } (la fecha es opcional).
- */
-const TESTIMONIOS = [
-  // { nombre: 'María', texto: 'Los cuentos nos ayudaron muchísimo…', fecha: 'julio 2026' },
-];
+const ESPERA_MS = 60 * 1000; // un mensaje por minuto desde el mismo navegador
 
 export default function Experiencias() {
   const [nombre, setNombre] = useState('');
   const [comentario, setComentario] = useState('');
+  const [trampa, setTrampa] = useState(''); // honeypot anti-spam
+  const [enviando, setEnviando] = useState(false);
   const [enviado, setEnviado] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const [experiencias, setExperiencias] = useState([]);
+  const [cargando, setCargando] = useState(supabaseListo);
+
+  // Cargamos las experiencias ya publicadas.
+  useEffect(() => {
+    if (!supabaseListo) return;
+    let vivo = true;
+    listarExperiencias()
+      .then((filas) => { if (vivo) setExperiencias(filas); })
+      .catch(() => { /* si falla, mostramos el estado vacío */ })
+      .finally(() => { if (vivo) setCargando(false); });
+    return () => { vivo = false; };
+  }, []);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('');
     const n = nombre.trim();
     const c = comentario.trim();
     if (!n || !c) return;
+    if (trampa) return; // lo rellenan los bots, no las personas
 
-    // El portal es un sitio estático: el mensaje se envía por correo al equipo
-    // de PORTI, que lo revisa antes de publicarlo en esta sección.
-    const asunto = encodeURIComponent(`Experiencia compartida en PORTI — ${n}`);
-    const cuerpo = encodeURIComponent(
-      `Nombre: ${n}\n\nExperiencia:\n${c}\n\n` +
-      `— Enviado desde el Portal PORTI. Autorizo que mi mensaje sea revisado y, si el equipo lo considera, publicado en el portal.`
-    );
-    window.location.href = `mailto:${EMAIL}?subject=${asunto}&body=${cuerpo}`;
-    setEnviado(true);
+    // Sin base de datos configurada: enviamos por correo (modo provisional).
+    if (!supabaseListo) {
+      const asunto = encodeURIComponent(`Experiencia compartida en PORTI — ${n}`);
+      const cuerpo = encodeURIComponent(`Nombre: ${n}\n\nExperiencia:\n${c}`);
+      window.location.href = `mailto:${EMAIL}?subject=${asunto}&body=${cuerpo}`;
+      setEnviado(true);
+      return;
+    }
+
+    // Límite sencillo para evitar envíos repetidos desde el mismo navegador.
+    try {
+      const ultimo = Number(localStorage.getItem('porti:ultimo-envio') || 0);
+      if (Date.now() - ultimo < ESPERA_MS) {
+        setError('Acabas de enviar un mensaje. Espera un momento antes de enviar otro.');
+        return;
+      }
+    } catch { /* si no hay localStorage, seguimos igual */ }
+
+    setEnviando(true);
+    try {
+      const fila = await guardarExperiencia({ nombre: n, texto: c });
+      setExperiencias((prev) => [fila, ...prev]);
+      try { localStorage.setItem('porti:ultimo-envio', String(Date.now())); } catch { /* opcional */ }
+      setEnviado(true);
+      setNombre('');
+      setComentario('');
+    } catch {
+      setError('No pudimos publicar tu mensaje. Revisa tu conexión e inténtalo de nuevo.');
+    } finally {
+      setEnviando(false);
+    }
   };
 
   const nuevoMensaje = () => {
     setNombre('');
     setComentario('');
+    setError('');
     setEnviado(false);
   };
 
@@ -59,14 +95,14 @@ export default function Experiencias() {
             <div className="exp-gracias" role="status">
               <span className="exp-gracias-icon"><CheckCircle2 size={30} aria-hidden="true" /></span>
               <h3>Gracias por compartir</h3>
-              <p>
-                Se abrió tu correo con el mensaje listo para enviar. Si no se abrió,
-                puedes escribirnos directamente a{' '}
-                <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.
-              </p>
-              <p className="exp-gracias-nota">
-                El equipo de PORTI revisa cada experiencia antes de publicarla.
-              </p>
+              {supabaseListo ? (
+                <p>Tu experiencia ya está publicada aquí al lado.</p>
+              ) : (
+                <p>
+                  Se abrió tu correo con el mensaje listo para enviar. Si no se abrió,
+                  escríbenos a <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.
+                </p>
+              )}
               <button type="button" className="btn btn-outline" onClick={nuevoMensaje}>
                 Escribir otro mensaje
               </button>
@@ -105,28 +141,54 @@ export default function Experiencias() {
                 <span className="exp-contador">{comentario.length}/800</span>
               </div>
 
-              <button type="submit" className="btn btn-primary exp-submit">
-                <Send size={17} aria-hidden="true" /> Enviar mi experiencia
+              {/* Campo trampa: invisible para las personas, lo rellenan los bots */}
+              <input
+                type="text"
+                className="exp-trampa"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                value={trampa}
+                onChange={(e) => setTrampa(e.target.value)}
+              />
+
+              {error && (
+                <p className="exp-error" role="alert">
+                  <AlertCircle size={16} aria-hidden="true" /> {error}
+                </p>
+              )}
+
+              <button type="submit" className="btn btn-primary exp-submit" disabled={enviando}>
+                {enviando ? (
+                  <><Loader2 size={17} className="exp-spin" aria-hidden="true" /> Publicando…</>
+                ) : (
+                  <><Send size={17} aria-hidden="true" /> Enviar mi experiencia</>
+                )}
               </button>
 
               <p className="exp-aviso">
-                No compartas datos personales de niñas, niños o adolescentes. Tu mensaje
-                se envía al equipo de PORTI y se publica solo si tú lo autorizas.
+                Tu mensaje se publica en esta página. No compartas datos personales de
+                niñas, niños o adolescentes.
               </p>
             </form>
           )}
         </div>
 
         {/* Experiencias publicadas */}
-        <div className="exp-lista" aria-label="Experiencias publicadas">
-          {TESTIMONIOS.length > 0 ? (
-            TESTIMONIOS.map((t, i) => (
-              <article key={i} className="exp-card">
+        <div className="exp-lista" aria-live="polite">
+          {cargando ? (
+            <div className="exp-vacio">
+              <Loader2 size={26} className="exp-spin" aria-hidden="true" />
+              <p>Cargando experiencias…</p>
+            </div>
+          ) : experiencias.length > 0 ? (
+            experiencias.map((t) => (
+              <article key={t.id ?? `${t.nombre}-${t.texto.slice(0, 12)}`} className="exp-card">
                 <Quote className="exp-quote" size={22} aria-hidden="true" />
                 <p className="exp-texto">{t.texto}</p>
                 <footer className="exp-autor">
                   <span className="exp-nombre">{t.nombre}</span>
-                  {t.fecha && <span className="exp-fecha">{t.fecha}</span>}
+                  {t.creado_en && <span className="exp-fecha">{formatearFecha(t.creado_en)}</span>}
                 </footer>
               </article>
             ))
