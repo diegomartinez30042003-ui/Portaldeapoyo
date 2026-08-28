@@ -10,7 +10,7 @@
  *   SUPABASE_ANON_KEY = "anon public" key    (es pública por diseño; la
  *                        seguridad la dan las políticas RLS de la tabla)
  */
-export const SUPABASE_URL = '';
-export const SUPABASE_ANON_KEY = '';
+export const SUPABASE_URL = 'https://gbfrjlszevrwiowkdcte.supabase.co';
+export const SUPABASE_ANON_KEY = 'sb_publishable_HPOF8qKAPixzSI1_oxkSZw_C-WwyEUC';
 
 export const supabaseListo = Boolean(SUPABASE_URL && SUPABASE_ANON_KEY);
