@@ -4,7 +4,7 @@ import { createContext, useContext } from 'react';
 // la estructura de carpetas del Drive (misma distribución). Se actualiza solo
 // aquí, en código, cuando se agrega o reorganiza material en el Drive.
 //
-//   Cuentos infantiles (23) · Material para padres (22) · Materiales para psicólogos y afines (54) = 99
+//   Cuentos infantiles (23) · Material para padres (22) · Materiales para psicólogos y afines (56) = 101
 //
 const R = './Material terremoto niños';
 
@@ -74,6 +74,8 @@ const resources = [
   { id: 94, category: 'Materiales para psicólogos y afines', subcategory: 'Atención psicosocial', type: 'Guía Escrita', title: 'Recuperación y Capacidad de Adaptación tras un Desastre: Etapas', description: 'Documento sobre las etapas de la recuperación y la adaptación de las comunidades tras un desastre.', url: `${R}/Materiales para psicólogos y afines/Atención psicosocial/Recuperación y capacidad de adaptación tras un desastre - etapas.pdf` },
   { id: 96, category: 'Materiales para psicólogos y afines', subcategory: 'Atención psicosocial', type: 'PDF', title: 'Protección de la Salud Mental en Situaciones de Desastres y Emergencias', description: 'Manual de la Organización Panamericana de la Salud (OPS/OMS) de la serie Manuales y Guías sobre Desastres.', url: `${R}/Materiales para psicólogos y afines/Atención psicosocial/Protección de la salud mental en situaciones de desastres y emergencias.pdf` },
   { id: 98, category: 'Materiales para psicólogos y afines', subcategory: 'Atención psicosocial', type: 'PDF', title: 'Avances en Salud Mental y Apoyo Psicológico en Desastres', description: 'Libro sobre los avances en la atención de la salud mental y el apoyo psicológico en desastres. En inglés.', url: `${R}/Materiales para psicólogos y afines/Atención psicosocial/Advances in Disaster Mental Health and Psychological Support.pdf` },
+  { id: 100, category: 'Materiales para psicólogos y afines', subcategory: 'Atención psicosocial', type: 'Artículo', title: 'La Exposición a un Desastre como Factor de Riesgo para la Salud Mental', description: 'Estudio longitudinal sobre problemas de salud mental a los 18 meses, 4 y 10 años de un desastre. En inglés.', url: `${R}/Materiales para psicólogos y afines/Atención psicosocial/La exposición a desastres como factor de riesgo.pdf` },
+  { id: 101, category: 'Materiales para psicólogos y afines', subcategory: 'Atención psicosocial', type: 'Guía Escrita', title: 'Estrategias de Mediación Cultural en Emergencias (Tomo 1)', description: 'La lectura y la escritura como refugios simbólicos en contextos de emergencia.', url: `${R}/Materiales para psicólogos y afines/Atención psicosocial/Estrategias de mediación en emergencias.pdf` },
 
   // ===== Materiales para psicólogos y afines · Culpa del sobreviviente =====
   { id: 27, category: 'Materiales para psicólogos y afines', subcategory: 'Culpa del sobreviviente', type: 'Artículo', title: 'Culpa del Superviviente y TEPT (Terremoto Turquía-Siria)', description: 'Artículo científico sobre la culpa del superviviente como mediadora del TEPT. En inglés.', url: `${R}/Materiales para psicólogos y afines/Culpa del sobreviviente/Articulo cientifico -Survivor Guilt as a Mediator Between Post-Traumatic Stress Disorder and Pessimism Schema After Türkiye-Syria Earthquake.pdf` },

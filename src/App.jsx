@@ -2,6 +2,7 @@ import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { AppProvider } from './store';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Experiencias from './components/Experiencias';
 import Home from './pages/Home';
 import QuienesSomos from './pages/QuienesSomos';
 import AvisoLegal from './pages/AvisoLegal';
@@ -22,6 +23,8 @@ function App() {
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
           <Footer />
+          {/* Botón flotante + panel "Comparte tu experiencia" (en todas las páginas) */}
+          <Experiencias />
         </div>
       </Router>
     </AppProvider>

@@ -3,7 +3,6 @@ import { useAppContext } from '../store';
 import Hero from '../components/Hero';
 import ResourceCard from '../components/ResourceCard';
 import SocialMedia from '../components/SocialMedia';
-import Experiencias from '../components/Experiencias';
 import {
   LayoutGrid, BookHeart, HeartHandshake, Stethoscope,
   LifeBuoy, BookOpen, ChevronDown, ChevronUp
@@ -185,11 +184,7 @@ export default function Home() {
               fuentes oficiales cuando estas se encuentren disponibles.
             </p>
           </div>
-        </section>
-
-        {/* Comparte tu experiencia — última sección del sitio */}
-        <Experiencias />
-      </main>
+        </section>      </main>
     </div>
   );
 }

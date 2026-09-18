@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
-import { Search, FileHeart, Unlock } from 'lucide-react';
+import { Search, FileHeart, Unlock, MessageCircleHeart } from 'lucide-react';
 import { useAppContext } from '../store';
+import { abrirExperiencias } from './Experiencias';
 import './Hero.css';
 
 export default function Hero({ searchTerm, setSearchTerm }) {
@@ -54,6 +55,11 @@ export default function Hero({ searchTerm, setSearchTerm }) {
           <li><FileHeart size={16} aria-hidden="true" /> {count} materiales cuidadosamente seleccionados</li>
           <li><Unlock size={16} aria-hidden="true" /> Acceso libre y gratuito</li>
         </ul>
+
+        <button type="button" className="hero-exp-btn" onClick={abrirExperiencias}>
+          <MessageCircleHeart size={18} aria-hidden="true" />
+          ¿Te ayudó algún material? Comparte tu experiencia o sugerencia
+        </button>
       </div>
 
       <svg className="hero-wave" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
