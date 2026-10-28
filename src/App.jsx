@@ -3,6 +3,7 @@ import { AppProvider } from './store';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Experiencias from './components/Experiencias';
+import Anuncio from './components/Anuncio';
 import Home from './pages/Home';
 import QuienesSomos from './pages/QuienesSomos';
 import AvisoLegal from './pages/AvisoLegal';
@@ -15,6 +16,8 @@ function App() {
         <div className="app-container">
           <div className="flag-ribbon" aria-hidden="true" />
           <Navbar />
+          {/* Anuncio temporal (ver src/anuncio.js para activarlo/quitarlo) */}
+          <Anuncio />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/quienes-somos" element={<QuienesSomos />} />

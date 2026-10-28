@@ -1,0 +1,124 @@
+.anuncio {
+  background: linear-gradient(90deg, var(--color-secondary-light) 0%, var(--color-accent-light) 100%);
+  border-bottom: 1px solid var(--color-border-strong);
+}
+
+.anuncio-inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
+}
+
+.anuncio-icon {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--color-surface);
+  color: var(--color-secondary-dark);
+  box-shadow: var(--shadow-xs);
+}
+
+.anuncio-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.anuncio-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-secondary-dark);
+}
+
+.anuncio-title {
+  font-size: 1rem;
+  line-height: 1.25;
+  color: var(--color-text-primary);
+}
+
+.anuncio-detail {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+.anuncio-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  flex: 0 0 auto;
+}
+
+.anuncio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0.95rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--color-primary-dark);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
+}
+
+.anuncio-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.anuncio-btn--primary {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  color: #fff;
+}
+
+.anuncio-close {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+}
+
+.anuncio-close:hover {
+  background: rgba(20, 41, 74, 0.08);
+  color: var(--color-text-primary);
+}
+
+@media (max-width: 720px) {
+  .anuncio-inner {
+    position: relative;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding-right: 2.75rem;
+  }
+  .anuncio-text {
+    flex-basis: calc(100% - 42px - 0.75rem);
+  }
+  .anuncio-actions {
+    width: 100%;
+    padding-left: calc(42px + 0.75rem);
+  }
+  .anuncio-close {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.5rem;
+  }
+}
